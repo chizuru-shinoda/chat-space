@@ -7,7 +7,7 @@
 |mail|string|null: false|
 
 ### Association
-- has_many :groups, through: menbers
+- has_many :groups, through: members
 - has_many :message
 - has_many :members
 
