@@ -25,10 +25,11 @@
 ## messagesテーブル
 |Column|Type|Option|
 |------|----|------|
-|body|text|null: true, unique: false|
-|image|string|null: true, unique: false|
-|user_id|integer|null: false, unique: false, foreign_key: true|
-|group_id|integer|null: false, unique: false, foreign_key: true|
+|body|text|--------|
+|image|string|-----|
+|posted_at|datetime|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -38,8 +39,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, unique: false, foreign_key: true|
-|group_id|integer|null: false, unique: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
