@@ -1,6 +1,6 @@
 .flash-box {
-  background-color: #38AEF0;
-  color: #ffffff;
+  background-color: $light-blue;
+  color: $white;
   box-sizing: border-box;
   display: block;
   margin: 0;
@@ -14,7 +14,7 @@
 
 .wrapper {
   box-sizing: border-box;
-  color: #333333;
+  color: $main-gray-dark;
   display: flex;
   margin: 0;
   padding: 0;
