@@ -1,0 +1,109 @@
+.chat-main {
+  width: calc(100vw - 300px);
+  .main-header {
+    box-sizing: border-box;
+    color: $main-gray-dark;
+    display: flex;
+    height: 100px;
+    padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
+    &__edit-btn {
+      display: flex;
+      border: solid 1px $light-blue;
+      color: $light-blue;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      position: absolute;
+      right: 40px;
+    }
+    .current-group {
+      box-sizing: border-box;
+      color: $main-gray-dark;
+      font-size: 20px;
+      margin-top: 35px;
+      .member-list {
+        display: flex;
+        color: $light-gray;
+        font-size: 12px;
+        margin-top: 15px;
+        &__member {
+          padding:0 5px;
+        }
+      }
+    }
+  }
+  .message-box {
+    background-color: #fafafa;
+    box-sizing: border-box;
+    color: $main-gray-dark;
+    overflow: scroll;
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+
+    .message {
+      padding-bottom: 40px;
+      .upper-info {
+        display: flex;
+        margin-bottom: 10px;
+        &__user {
+          color: $main-gray-dark;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $light-gray;
+          font-size: 12px;
+          padding-left: 10px; 
+        }
+      }
+      .message__text {
+      color: $main-gray-dark;
+      font-size: 14px;
+      margin-bottom: 10px;
+      }
+    }
+  }
+  .form {
+    background-color: #dddddd;
+    height: 90px;
+    position: fixed;
+    bottom: 0px;
+    width: calc(100vw - 300px);
+    .new-message {
+      display: flex;
+      padding: 20px 40px;
+      .input-box {
+        width: 100%;
+        position: relative;
+        height: 50px;
+        &__send-btn {
+          height: 50px;
+          padding: 0 30px;
+          margin-left:15px;
+          background-color: $light-blue;
+          color: $white;
+          line-height: 50px;
+          cursor: pointer;
+        }
+        &__text {
+          background-color: $white;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 40px 0 10px;
+          color: $main-gray-light;
+          border-style: none;
+        }
+      }
+      .image-label {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
