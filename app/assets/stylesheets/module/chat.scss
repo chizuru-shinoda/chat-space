@@ -1,5 +1,5 @@
 .chat-main {
-  width: calc(100vw - 300px);
+  width: calc(100% - 300px);
   .main-header {
     box-sizing: border-box;
     color: $main-gray-dark;
@@ -40,9 +40,8 @@
     box-sizing: border-box;
     color: $main-gray-dark;
     overflow: scroll;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 100px - 90px);
     padding: 46px 40px;
-
     .message {
       padding-bottom: 40px;
       .upper-info {
@@ -107,3 +106,4 @@
     }
   }
 }
+

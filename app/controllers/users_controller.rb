@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
+  def create
+  end
 
   def edit
+    if current_user.edit(user_params)
+      redirect_to root_path
+    else 
+      render :edit
+    end
   end
 
   def update
