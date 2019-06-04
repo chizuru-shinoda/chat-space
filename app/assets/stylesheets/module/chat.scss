@@ -1,5 +1,6 @@
 .chat-main {
-  width: calc(100% - 300px);
+  width: calc(100vw - 300px);
+  float: right;
   .main-header {
     box-sizing: border-box;
     color: $main-gray-dark;
@@ -22,32 +23,34 @@
     .current-group {
       box-sizing: border-box;
       color: $main-gray-dark;
-      font-size: 20px;
       margin-top: 35px;
-      .member-list {
+      &__title {
+        font-size: 20px;
+      }
+      &__members {
         display: flex;
         color: $light-gray;
         font-size: 12px;
         margin-top: 15px;
-        &__member {
-          padding:0 5px;
-        }
+        padding:0 5px;
       }
     }
   }
-  .message-box {
+
+  .messages {
     background-color: #fafafa;
     box-sizing: border-box;
     color: $main-gray-dark;
     overflow: scroll;
-    height: calc(100vh - 100px - 90px);
+    height: calc(100vh - 190px);
     padding: 46px 40px;
+
     .message {
       padding-bottom: 40px;
-      .upper-info {
+      .upper-message {
         display: flex;
         margin-bottom: 10px;
-        &__user {
+        &__user-name {
           color: $main-gray-dark;
           font-size: 16px;
           font-weight: bold;
@@ -58,35 +61,29 @@
           padding-left: 10px; 
         }
       }
-      .message__text {
+      .lower-message {
       color: $main-gray-dark;
       font-size: 14px;
       margin-bottom: 10px;
       }
     }
   }
+
   .form {
     background-color: #dddddd;
     height: 90px;
     position: fixed;
     bottom: 0px;
     width: calc(100vw - 300px);
-    .new-message {
+    .new_message {
       display: flex;
       padding: 20px 40px;
-      .input-box {
-        width: 100%;
+      .form__message {
+        width: 923px;
         position: relative;
         height: 50px;
-        &__send-btn {
-          height: 50px;
-          padding: 0 30px;
-          margin-left:15px;
-          background-color: $light-blue;
-          color: $white;
-          line-height: 50px;
-          cursor: pointer;
-        }
+        padding-left: 10px;
+        box-sizing: border-box;
         &__text {
           background-color: $white;
           height: 50px;
@@ -96,14 +93,29 @@
           border-style: none;
         }
       }
-      .image-label {
-        font-size: 1.3rem;
-        position: absolute;
-        top: 10px;
-        right: 10px;
+      .hidden {
+        display: none;
+      }
+      .form__mask{
+        position: relative;
+        width: 923px;
+        &__image {
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+      }
+      .form-submit {
+        height: 50px;
+        padding: 0 30px;
+        margin-left:15px;
+        background-color: $light-blue;
+        color: $white;
+        line-height: 50px;
         cursor: pointer;
       }
     }
   }
 }
-
