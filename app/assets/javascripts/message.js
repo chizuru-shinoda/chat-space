@@ -3,6 +3,7 @@ $(document).on('turbolinks:load', function(){
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var html = `<div class="message" data-id="${message.id}">
+                  <div class="upper-message">
                     <div class="upper-message__user-name">
 ${message.user_name}
                     </div>
