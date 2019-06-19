@@ -1,14 +1,15 @@
 $(document).on('turbolinks:load', function(){
+  
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
-${message.user_name}
+                      ${message.user_name}
                     </div>
                     <div class="upper-message__date">
-${message.date}
+                      ${message.date}
                     </div>
                   </div>
                   <div class="lower-message">
@@ -21,6 +22,7 @@ ${message.date}
   return html;
   }
 
+//メッセージ送信の非同期化
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
@@ -43,9 +45,7 @@ ${message.date}
       function scrollBottom(){
         var target = $('.message').last();
         var position = target.offset().top + $('.messages').scrollTop();
-        $('.messages').animate({
-          scrollTop: position
-        }, 300, 'swing');
+        $('.messages').animate({scrollTop: position}, 300, 'swing');
       }
     })
 
@@ -57,4 +57,37 @@ ${message.date}
       $('.form-submit').prop('disabled', false);
     })
   })
-}); 
+
+//自動更新
+
+  function reloadMessages () {
+    if($('.messages')[0]){
+        var message_id = $('.message:last').data('id');
+    // console.log(message_id);
+    }else {
+        var message_id = 0
+    }
+
+    $.ajax({ 
+      url: 'api/messages', 
+      type: 'GET',
+      data: { id: message_id },
+      dataType: 'json'
+    })
+    
+    .done(function (messages) { 
+      console.log(messages);
+      var insertHTML = '';
+      messages.forEach(function (message) {
+        insertHTML = buildHTML(message); 
+        $('.messages').append(insertHTML);
+      })
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+    })   
+
+    .fail(function () {
+      alert('自動更新に失敗しました');
+    });
+  };
+  setInterval(reloadMessages, 5000);
+});
