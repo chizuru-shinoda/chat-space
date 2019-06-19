@@ -63,7 +63,6 @@ $(document).on('turbolinks:load', function(){
   function reloadMessages () {
     if($('.messages')[0]){
         var message_id = $('.message:last').data('id');
-    // console.log(message_id);
     }else {
         var message_id = 0
     }
