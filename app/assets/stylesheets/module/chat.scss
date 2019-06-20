@@ -8,10 +8,13 @@
     height: 100px;
     padding: 0 40px;
     border-bottom: solid 1px #eeeeee;
+    a {
+      text-decoration: none;
+      color: $light-blue;
+    }
     &__edit-btn {
       display: flex;
       border: solid 1px $light-blue;
-      color: $light-blue;
       float: right;
       height: 40px;
       line-height: 40px;
@@ -70,6 +73,7 @@
   }
 
   .form {
+    box-sizing: border-box;
     background-color: #dddddd;
     height: 90px;
     position: fixed;
@@ -77,13 +81,12 @@
     width: calc(100vw - 300px);
     .new_message {
       display: flex;
-      padding: 20px 40px;
+      padding: 20px 50px 20px 40px;
       .form__message {
-        width: 923px;
-        position: relative;
+        width: 100%;
         height: 50px;
         padding-left: 10px;
-        box-sizing: border-box;
+        border: none;
         &__text {
           background-color: $white;
           height: 50px;
@@ -114,6 +117,7 @@
         background-color: $light-blue;
         color: $white;
         line-height: 50px;
+        float: right;
         cursor: pointer;
       }
     }

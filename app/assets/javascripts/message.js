@@ -13,10 +13,8 @@ $(document).on('turbolinks:load', function(){
                     </div>
                   </div>
                   <div class="lower-message">
-                    <p class="lower-message__content">
-                      ${content}
-                      ${img}
-                    </P>
+                    <p class="lower-message__content">${content} </p>
+                    <p class="lower-message__content">${img}</p>
                   </div>
                 </div>`
   return html;
