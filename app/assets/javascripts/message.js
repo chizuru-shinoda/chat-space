@@ -67,7 +67,7 @@ $(function()　{
       }else {
           var message_id = 0
       }
-      console.log($('.message')[0])
+     
       $.ajax({ 
         url: 'api/messages', 
         type: 'GET',
